@@ -8,7 +8,12 @@ class ContactForm extends Component{
 
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.submit(this.state)
+        this.props.submit(this.state);
+        this.reset();
+    }
+
+    reset = () => {
+        this.setState({name:'', number:''})
     }
 
     handleChange= ({ target:{ value, name}}) =>{
